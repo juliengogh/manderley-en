@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麦金侬人物测试</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>麦金侬人物测试</h1>
+        
+        <!-- 新增的描述文字 -->
+        <p class="description">
+            《不眠之夜》新生相见，曼德雷酒吧也特别上新了多款特调鸡尾酒，每款都精心准备，独一无二，推荐您下单品尝。如您一时难以抉择尝试哪款，不妨试试下面的测试，届时曼德雷酒吧将依据您测试的结果为您推荐最佳特调，期待您的光临。
+        </p>
+
+        <form id="quiz-form">
+            <!-- 问题1 -->
+            <div class="question">
+                <p>1. 一声嘶鸣刺破空中雾霭，此时三位巫师突然出现在荒芜的原野上，他们靠近你向你耳语，预言了你的命运。面对预言，你的第一反应是？</p>
+                <label>
+                    <input type="radio" name="q1" value="麦克白"> 主动打破枷锁，用行动改写结局
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="赫卡忒"> 冷静操控全局，成为命运的主宰
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="白蛇"> 为守护所爱之人，甘愿自我牺牲
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="艾格尼丝·纳史密斯"> 不断寻找线索，试图求证预言的真实性
+                </label>
+            </div>
+
+            <!-- 问题2 -->
+            <div class="question">
+                <p>2. 午夜十二点，窗外的雷暴撕裂天际。你发现家中的桌子上出现了一张纸条，上面写着几乎颠覆生活的危险秘密，你会如何处理它？</p>
+                <label>
+                    <input type="radio" name="q2" value="艾格尼丝·纳史密斯"> 将秘密封存于暗匣，让时间抹去痕迹
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="青蛇"> 撕碎秘密下埋藏的虚伪规则，哪怕引发动荡
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="凯瑟琳·坎贝尔"> 拆解秘密的碎片，转化为制衡对手的筹码
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="白蛇"> 独自背负秘密并试图解决，即使受到误解
+                </label>
+            </div>
+
+            <!-- 问题3 -->
+            <div class="question">
+                <p>3. 你潜伏多时，终于发现对手的软肋。正当你准备给予对手致命一击时，密报传来，盟友已暗中倒戈。面对背叛，你的本能反应是？
+</p>
+                <label>
+                    <input type="radio" name="q3" value="麦克白"> 用鲜血重建信义，与盟友同归于尽
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="赫卡忒"> 审时度势，密谋设计利用背叛者，操控全局
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="凯瑟琳·坎贝尔"> 暗中窥探，等候最佳时机破局
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="青蛇"> 孤身复仇，让背叛者永堕炼狱
+                </label>
+            </div>
+        </form>
+
+        <!-- 查看结果按钮 -->
+        <button id="show-result-button" disabled>查看你的麦金侬人物</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
