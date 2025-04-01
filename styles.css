@@ -154,7 +154,7 @@ h1 {
 
 /* 角色推荐标题 */
 .recommendation-title {
-    margin: 15px 0 10px;
+    margin: 20px 0 10px;
     display: block;
 }
 
@@ -234,7 +234,7 @@ h1 {
     #result-container h1,
     .recommendation-title {
         font-size: 22px;
-        margin-bottom: 12px;
+        margin-bottom: 15px;
     }
     
     #result-container #result {
