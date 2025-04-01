@@ -8,10 +8,14 @@
 </head>
 <body>
     <div id="result-container">
-        <h1>Your Personality Today：</h1>
-        <div id="result"></div>
-        <button onclick="window.location.href = 'index.html'">Re-test</button>
+    <h1>Your Personality Today：</h1>
+    <div id="result">
+        The Unbowed Fighter-Ambitious、Indomitable、Strong motivation for execution
+        <span class="recommendation-title">Character Recommend:</span>
+        <span class="recommendation">Macbeth</span>
     </div>
+    <button onclick="window.location.href = 'index.html'">Re-test</button>
+</div>
     <script>
         // 从URL参数中获取角色
         const urlParams = new URLSearchParams(window.location.search);
