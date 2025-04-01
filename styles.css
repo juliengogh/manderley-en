@@ -22,12 +22,14 @@ body {
     flex-direction: column;
 }
 
-/* 标题 */
+/* 主标题 */
 h1 {
     font-size: 28px;
     margin-bottom: 40px;
     color: #fff;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* 描述文字 */
@@ -84,8 +86,8 @@ h1 {
     font-size: 17px;
     cursor: pointer;
     border: none;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #8B0000;
+    color: #FFF8DC;
     border-radius: 25px;
     width: auto;
     min-width: 280px;
@@ -99,7 +101,7 @@ h1 {
 }
 
 #show-result-button:hover {
-    background-color: #0056b3;
+    background-color: #A52A2A;
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(139, 0, 0, 0.5);
 }
@@ -112,7 +114,7 @@ h1 {
     color: #999;
 }
 
-/* 结果页面样式 */
+/* 结果页面容器 */
 #result-container {
     margin-top: 20px;
     padding: 30px;
@@ -130,42 +132,43 @@ h1 {
     min-height: 100vh;
 }
 
-#result-container h1 {
-    font-size: 24px;
+/* 结果标题统一样式 */
+#result-container h1,
+.recommendation-title {
+    font-size: 26px;
     margin-bottom: 15px;
     color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* 结果内容 */
 #result-container #result {
     font-size: 20px;
-    margin-top: 15px;
-    line-height: 1.8;
+    margin-top: 10px;
+    line-height: 1.6;
     color: #fff;
     text-align: center;
-    white-space: pre-line;
 }
 
-/* 角色推荐标题样式 */
+/* 角色推荐标题 */
 .recommendation-title {
+    margin: 15px 0 10px;
     display: block;
-    font-weight: bold;
-    font-size: 24px;
-    margin: 25px 0 10px;
-    color: #fff;
 }
 
-/* 角色名称样式 */
+/* 推荐角色名称 */
 .recommendation {
     display: block;
     color: #ffcc00;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
     margin: 10px 0;
     text-align: center;
-    letter-spacing: 1px;
 }
 
-/* 结果页按钮样式 */
+/* 重新测试按钮 */
 #result-container button {
     padding: 14px 28px;
     font-size: 16px;
@@ -228,17 +231,15 @@ h1 {
         padding: 20px;
     }
     
-    #result-container h1 {
+    #result-container h1,
+    .recommendation-title {
         font-size: 22px;
+        margin-bottom: 12px;
     }
     
     #result-container #result {
         font-size: 18px;
-        line-height: 1.6;
-    }
-    
-    .recommendation-title {
-        margin: 20px 0 8px;
+        margin-top: 8px;
     }
     
     .recommendation {
