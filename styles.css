@@ -43,6 +43,10 @@ h1 {
     padding: 0 15px;
 }
 
+.description em {
+    font-style: italic;
+}
+
 /* 问题样式 */
 .question {
     margin-bottom: 30px;
