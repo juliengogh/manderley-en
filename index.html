@@ -1,26 +1,64 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Who Will You Be In Manderley?</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preload and CDN fallback -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/juliengogh/manderley@main/styles.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/juliengogh/manderley@main/script.js" as="script">
+    <link rel="stylesheet" href="styles.css" onerror="loadFallbackCSS()">
+    
+    <script>
+        function loadFallbackCSS() {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://cdn.jsdelivr.net/gh/juliengogh/manderley@main/styles.css';
+            document.head.appendChild(link);
+        }
+        
+        window.addEventListener('load', function() {
+            document.getElementById('loading').style.display = 'none';
+            
+            if (!document.querySelector('style[data-loaded="true"]')) {
+                loadFallbackCSS();
+            }
+        });
+        
+        setTimeout(function() {
+            if(document.getElementById('loading').style.display !== 'none') {
+                document.getElementById('loading').innerHTML = 
+                    '<div style="color:#fff;text-align:center;padding:20px;">' +
+                    '   <p>Loading issues detected. Please try:</p>' +
+                    '   <p>1. Switching networks (WiFi/4G/5G)</p>' +
+                    '   <p>2. Refreshing the page</p>' +
+                    '   <button onclick="window.location.reload()" style="padding:10px 20px;margin-top:20px;background:#007bff;color:#fff;border:none;border-radius:5px;">Reload</button>' +
+                    '</div>';
+            }
+        }, 5000);
+    </script>
 </head>
 <body>
+    <!-- Loading indicator -->
+    <div id="loading" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999;display:flex;justify-content:center;align-items:center;">
+        <div style="color:#fff;font-size:20px;">Loading...</div>
+    </div>
+    
     <div id="quiz-container">
         <h1>Who Will You Be In Manderley?</h1>
         
-        <!-- 新增的描述文字 -->
         <p class="description">
-            At a fresh beginning of <em>Sleep No More</em>, Shanghai, Manderley Bar presents a selection of exclusive cocktails, each exquistely crafted and one-of-a-kind. We highly recommend giving them a try!
-If you’re unsure which to choose, why not take our personalized quiz? Based on your results, our bartenders will recommend the perfect signature drink for you. We look foward to your visit!
+            At a fresh beginning of <em>Sleep No More</em>, Shanghai, Manderley Bar presents a selection of exclusive cocktails, each exquisitely crafted and one-of-a-kind. We highly recommend giving them a try! If you're unsure which to choose, why not take our personalized quiz? Based on your results, our bartenders will recommend the perfect signature drink for you. We look forward to your visit!
         </p>
 
         <form id="quiz-form">
-            <!-- 问题1 -->
+            <!-- Question 1 -->
             <div class="question">
-                <p>1. The sudden neigh pierces the fog-shrouded sky as three witches emerge on the desolate moor. They approach and whisper the prophecies into your ear. Your first reaction would be:
-</p>
+                <p>1. The sudden neigh pierces the fog-shrouded sky as three witches emerge on the desolate moor. They approach and whisper the prophecies into your ear. Your first reaction would be:</p>
                 <label>
                     <input type="radio" name="q1" value="Macbeth"> Rewrite the ending with personal choices and break the shackles
                 </label>
@@ -35,10 +73,9 @@ If you’re unsure which to choose, why not take our personalized quiz? Based on
                 </label>
             </div>
 
-            <!-- 问题2 -->
+            <!-- Question 2 -->
             <div class="question">
-                <p>2. At midnight, thunder tears through the sky. You discover a note on your table containing a dangerous secret that could turn your life upside down. How would you handle it?
-</p>
+                <p>2. At midnight, thunder tears through the sky. You discover a note on your table containing a dangerous secret that could turn your life upside down. How would you handle it?</p>
                 <label>
                     <input type="radio" name="q2" value="Agnes Naismith"> Seal the secret in a vault and time will erase its traces
                 </label>
@@ -53,10 +90,9 @@ If you’re unsure which to choose, why not take our personalized quiz? Based on
                 </label>
             </div>
 
-            <!-- 问题3 -->
+            <!-- Question 3 -->
             <div class="question">
-                <p>3. After months of undercover, you finally unveil your rival's fatal weakness. Just as you prepare to deliver the death blow, secret intelligence reveals your ally has secretly changed sides under the cloak of darkness. Faced with betrayal, your instinctive reaction is:
-</p>
+                <p>3. After months of undercover, you finally unveil your rival's fatal weakness. Just as you prepare to deliver the death blow, secret intelligence reveals your ally has secretly changed sides under the cloak of darkness. Faced with betrayal, your instinctive reaction is:</p>
                 <label>
                     <input type="radio" name="q3" value="Macbeth"> Let blood be the ink to rewrite infamy, and rebuild loyalty through violent rebirth
                 </label>
@@ -72,9 +108,9 @@ If you’re unsure which to choose, why not take our personalized quiz? Based on
             </div>
         </form>
 
-        <!-- 查看结果按钮 -->
         <button id="show-result-button" disabled>View Your Manderley Figure</button>
     </div>
-    <script src="script.js"></script>
+    
+    <script src="script.js" onerror="this.src='https://cdn.jsdelivr.net/gh/juliengogh/manderley@main/script.js'"></script>
 </body>
 </html>
