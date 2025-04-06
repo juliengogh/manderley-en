@@ -1,27 +1,56 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Your Manderley Figure</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/juliengogh/manderley-eno@main/styles.css" as="style">
+    <link rel="stylesheet" href="styles.css" onerror="loadFallbackCSS()">
+    
+    <script>
+        function loadFallbackCSS() {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://cdn.jsdelivr.net/gh/juliengogh/manderley-en@main/styles.css';
+            document.head.appendChild(link);
+        }
+    </script>
 </head>
 <body>
-    <div id="result-container">
-    <h1>Your Manderley Figure：</h1>
-    <div id="result">
-        The Unbowed Fighter-Ambitious、Indomitable、Strong motivation for execution
-        <span class="recommendation-title">Character Recommend:</span>
-        <span class="recommendation">Macbeth</span>
+    <div id="loading" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999;display:flex;justify-content:center;align-items:center;">
+        <div style="color:#fff;font-size:20px;">Loading...</div>
     </div>
-    <button onclick="window.location.href = 'index.html'">Re-test</button>
-</div>
+    
+    <div id="result-container">
+        <h1>Your Manderley Figure：</h1>
+        <div id="result"></div>
+        <button onclick="window.location.href = 'index.html'">Re-test</button>
+    </div>
+    
     <script>
-        // 从URL参数中获取角色
+        window.addEventListener('load', function() {
+            document.getElementById('loading').style.display = 'none';
+        });
+        
+        setTimeout(function() {
+            if(document.getElementById('loading').style.display !== 'none') {
+                document.getElementById('loading').innerHTML = 
+                    '<div style="color:#fff;text-align:center;padding:20px;">' +
+                    '   <p>Loading issues detected. Please try:</p>' +
+                    '   <p>1. Switching networks (WiFi/4G/5G)</p>' +
+                    '   <p>2. Refreshing the page</p>' +
+                    '   <button onclick="window.location.reload()" style="padding:10px 20px;margin-top:20px;background:#007bff;color:#fff;border:none;border-radius:5px;">Reload</button>' +
+                    '</div>';
+            }
+        }, 5000);
+
         const urlParams = new URLSearchParams(window.location.search);
         const role = urlParams.get('role');
 
-        // 根据角色显示对应的内容
         const resultElement = document.getElementById('result');
         let resultText = '';
 
@@ -63,10 +92,9 @@
                 `;
                 break;
             default:
-                resultText = 'unknown';
+                resultText = 'Unknown result';
         }
 
-        // 显示结果
         resultElement.innerHTML = resultText;
     </script>
 </body>
