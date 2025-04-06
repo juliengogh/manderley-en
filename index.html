@@ -9,15 +9,15 @@
     <title>Who Will You Be In Manderley?</title>
     
     <!-- Preload and CDN fallback -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/juliengogh/manderley@main/styles.css" as="style">
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/juliengogh/manderley@main/script.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/juliengogh/manderley-en@main/styles.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/juliengogh/manderley-en@main/script.js" as="script">
     <link rel="stylesheet" href="styles.css" onerror="loadFallbackCSS()">
     
     <script>
         function loadFallbackCSS() {
             var link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.href = 'https://cdn.jsdelivr.net/gh/juliengogh/manderley@main/styles.css';
+            link.href = 'https://cdn.jsdelivr.net/gh/juliengogh/manderley-en@main/styles.css';
             document.head.appendChild(link);
         }
         
@@ -111,6 +111,6 @@
         <button id="show-result-button" disabled>View Your Manderley Figure</button>
     </div>
     
-    <script src="script.js" onerror="this.src='https://cdn.jsdelivr.net/gh/juliengogh/manderley@main/script.js'"></script>
+    <script src="script.js" onerror="this.src='https://cdn.jsdelivr.net/gh/juliengogh/manderley-en@main/script.js'"></script>
 </body>
 </html>
