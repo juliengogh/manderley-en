@@ -1,4 +1,4 @@
-/* 全局样式 */
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,7 +8,7 @@ body {
     text-align: center;
 }
 
-/* 测试容器 */
+/* Quiz Container */
 #quiz-container {
     margin: 20px auto;
     padding: 25px;
@@ -22,7 +22,7 @@ body {
     flex-direction: column;
 }
 
-/* 主标题 */
+/* Headings */
 h1 {
     font-size: 28px;
     margin-bottom: 40px;
@@ -32,7 +32,7 @@ h1 {
     letter-spacing: 1px;
 }
 
-/* 描述文字 */
+/* Description Text */
 .description {
     font-size: 16px;
     color: #ccc;
@@ -47,7 +47,7 @@ h1 {
     font-style: italic;
 }
 
-/* 问题样式 */
+/* Questions */
 .question {
     margin-bottom: 30px;
     text-align: left;
@@ -61,7 +61,7 @@ h1 {
     padding-left: 0;
 }
 
-/* 答案选项样式 */
+/* Answer Options */
 .question label {
     display: flex;
     align-items: flex-start;
@@ -84,7 +84,7 @@ h1 {
     cursor: pointer;
 }
 
-/* 查看结果按钮 */
+/* Show Result Button */
 #show-result-button {
     padding: 14px 28px;
     font-size: 17px;
@@ -118,7 +118,7 @@ h1 {
     color: #999;
 }
 
-/* 结果页面容器 */
+/* Results Page */
 #result-container {
     margin-top: 20px;
     padding: 30px;
@@ -136,7 +136,6 @@ h1 {
     min-height: 100vh;
 }
 
-/* 结果标题统一样式 */
 #result-container h1,
 .recommendation-title {
     font-size: 26px;
@@ -147,7 +146,6 @@ h1 {
     letter-spacing: 1px;
 }
 
-/* 结果内容 */
 #result-container #result {
     font-size: 20px;
     margin-top: 10px;
@@ -156,13 +154,11 @@ h1 {
     text-align: center;
 }
 
-/* 角色推荐标题 */
 .recommendation-title {
     margin: 30px 0 5px;
     display: block;
 }
 
-/* 推荐角色名称 */
 .recommendation {
     display: block;
     color: #ffcc00;
@@ -172,7 +168,6 @@ h1 {
     text-align: center;
 }
 
-/* 重新测试按钮 */
 #result-container button {
     padding: 14px 28px;
     font-size: 16px;
@@ -194,7 +189,7 @@ h1 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* 手机端响应式设计 */
+/* Mobile Responsiveness */
 @media (max-width: 600px) {
     #quiz-container {
         padding: 20px 15px;
@@ -254,5 +249,18 @@ h1 {
         padding: 12px 24px;
         font-size: 15px;
         margin-top: 30px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    #quiz-container, #result-container {
+        background-color: white;
+        color: black;
+        box-shadow: none;
+    }
+    
+    button {
+        display: none;
     }
 }
